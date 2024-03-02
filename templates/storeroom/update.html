@@ -1,0 +1,356 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Qayima is a modern presentation HTML5 Listing & Directory Template.">
+    <meta name="keywords" content="HTML5, Template, Design, Listing, Directory, Listing Template" />
+    <meta name="author" content="creative-wp">
+
+    <!-- Titles
+    ================================================== -->
+    <title> تغییر وضعیت کالا </title>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/android-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-icon-144x144.png' %}">
+
+    <!-- Custom Font
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,500i,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/simple-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trackpad-scroll-emulator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rangeslider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chartist.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-steps.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
+</head>
+
+<body>
+    <!--********************************************************-->
+    <!--********************* SITE CONTENT *********************-->
+    <!--********************************************************-->
+    <div class="site-content">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Dashboard Site Content
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="dashboard-site-content">
+            <div class="dashboard-menu-area">
+                <div class="btn-close"><span class="icon-cross"></span></div>
+                <div class="site-logo-block">
+                    <a class="navbar-brand site-logo" href="{% url 'storeroom:index' %}">
+                    </a>
+                </div><!--~./ site-logo-block ~-->
+                <div class="dashboard-menu-main tse-scrollable">
+                    <div class="tse-content">
+                        <ul class="dashboard-menu">
+                            <li><a href="{% url 'storeroom:index' %}">
+                                <span class="icon icon-home"></span>
+                                <span>خانه</span>
+                            </a></li>
+                            <li><a class="active" href="{% url 'storeroom:input' %}">
+                                <span class="icon icon-building1"></span>
+                                <span> ثبت کالا </span>
+                            </a></li>
+                            <li><a href="{% url 'storeroom:update' %}">
+                                <span class="icon icon-placeholder1"></span>
+                                <span> تغییر وضعیت کالا </span>
+                            </a></li>
+                            <li><a href="{% url 'storeroom:report' %}">
+                                <span class="icon icon-bookmark1"></span>
+                                <span> گزارش گیری </span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div><!--~./ dashboard-menu-main ~-->
+                <div class="dashboard-menu-bottom">
+                    <ul class="dashboard-menu">
+                        <li><a href="{% url 'storeroom:logout' %}">
+                            <span class="icon icon-logout-1"></span>
+                            <span>خروج</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dashboard-contant-area">
+                <!--~~~~~ Start dashboard Header ~~~~~-->
+                <header class="dashboard-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="dashboard-header-mian">
+                                    <div class="author-registration-area">
+                                        <div class="dropdown registration">
+                                            <div class="user-thumb">
+                                                <img src="{% static 'images/testimonials/1.png' %}" alt="img">
+                                            </div>
+                                            <button class="dropdown-toggle" type="button" id="authorButton" > سلام <span> انباردار </span></button>
+                                        </div>
+                                    </div><!-- /.author-registration-area -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header><!--~./ end dashboard header ~-->
+
+                <!--~~~~~ Start dashboard Contant ~~~~~-->
+                <div class="dashboard-contant dashboard-add-listing-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="dashboard-page-title">
+                                    <h3 class="title"> تغییر وضعیت کالا </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-10">
+                                <div id="add-listing-area" class="step-app">
+                                    <ul class="step-steps">
+                                        <li><a href="#tab_step1">
+                                            <span class="number"></span>
+                                            <span class="step-name"> اطلاعات کالا </span>
+                                        </a></li>
+                                    </ul><!--~~./ step-steps ~~-->
+                                    <div class="step-content">
+                                        <div class="step-tab-panel step-tab-location" id="tab_step1">
+                                            <div class="tab-from-content">
+                                                <form class="default-form" id="listlocation" name="listlocation" method="POST">
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <input name="pid" id="pid" type="text" class="form-controllar" placeholder=" شماره کالا ">
+                                                                <table class="table table-success d-none">
+                                                                    <thead>
+                                                                    <tr>
+                                                                        <th>شماره کالا</th>
+                                                                        <th>نام کالا</th>
+                                                                        <th>نام پروژه</th>
+                                                                        <th>نوع دستگاه</th>
+                                                                        <th>وضعیت دستگاه</th>
+                                                                        <th>برند دستگاه</th>
+                                                                    </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td id="tablepid"></td>
+                                                                        <td id="tablename"></td>
+                                                                        <td id="tableproject"></td>
+                                                                        <td id="tabletype"></td>
+                                                                        <td id="tablestatus"></td>
+                                                                        <td id="tablebrand"></td>
+                                                                    </tr>
+
+                                                                    </tbody>
+                                                                </table>
+
+                                                            </div>
+                                                            <div class="form-group">
+                                                                    <input name="tag" id="filtertag0" type="checkbox" value="2">
+                                                                    <label for="filtertag0" class="listtag"> خروج موقت </label>
+                                                                </div><!--~./ form-group ~-->
+                                                                <div class="form-group">
+                                                                    <input name="tag" id="filtertag1" type="checkbox" value="3">
+                                                                    <label for="filtertag1" class="listtag"> خروج دائم </label>
+                                                                </div><!--~./ form-group ~-->
+                                                                <div class="form-group">
+                                                                    <input name="tag" id="filtertag2" type="checkbox" value="1">
+                                                                    <label for="filtertag2" class="listtag"> ورود </label>
+                                                                </div><!--~./ form-group ~-->
+                                                                <div class="form-group">
+                                                                    <input type="text" id="input_time_description" name="input_time_description" class="form-controllar" placeholder=" توضیحات "/>
+                                                                </div>
+                                                        </div>
+                                                    </div>
+                                                </form><!--~~./ default-form ~~-->
+                                            </div>
+                                        </div><!--~~./ step-tab-info ~~-->
+                                    </div><!--~~./ step-content ~~-->
+                                    <div class="step-footer step-tab-pager">
+                                        <button name="search" id="search" data-direction="prev" class="btn btn-default btn-back" onclick="runScript()"> جست و جو </button>
+                                        <button name="submit" data-direction="finish" class="btn btn-default" onclick="save_status()"> ثبت </button>
+                                    </div><!--~~./ step-footer ~~-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--~./ end dashboard contant ~-->
+            </div>
+        </div><!--~./ end dashboard site content ~-->
+    </div>
+    <!--~./ end site content ~-->
+
+
+    <!-- All The JS Files
+    ================================================== --> 
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/jquery-validate.bootstrap-tooltip.min.js' %}"></script>
+    <script src="{% static 'js/SyoTimer.js' %}"></script>
+    <script src="{% static 'js/theia-sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'js/ResizeSensor.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/packery-mode.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/simple-scrollbar.min.js' %}"></script>
+    <script src="{% static 'js/scrolla.jquery.min.js' %}"></script>
+    <script src="{% static 'js/odometer.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.nav.js' %}"></script>
+    <script src="{% static 'js/rangeslider.min.js' %}"></script>
+    <script src="{% static 'js/jquery.trackpad-scroll-emulator.min.js' %}"></script>
+    <script src="{% static 'js/rater.min.js' %}"></script>
+    <script src="{% static 'js/jquery-steps.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script><!-- main-js -->
+
+    <script>
+        function runScript() {
+            $.ajaxSetup({
+                    data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+                });
+            $.ajax({
+                type: 'POST',
+                url: 'search_status', //The URL you defined in urls.py
+                data: {
+                    pid: $('#pid').val(),
+                    action: 'POST'
+                },
+                cache: false,
+                success: function (data) {
+                    $("#tablepid").html(data.pid1);
+                    $("#tablename").html(data.name);
+                    $("#tableproject").html(data.projectname);
+                    $("#tabletype").html(data.type);
+                    $("#tablestatus").html(data.stat);
+                    $("#tablebrand").html(data.brand);
+
+                    $("input:checkbox[name='tag']").prop("checked", false);
+
+                    if (data.statusproduct == 1){
+                        $("#filtertag2").prop('checked', true);
+                        $("#input_time_description").val(data.destime);
+                    }
+                    else if (data.statusproduct == 2){
+                        $("#filtertag0").prop('checked', true);
+                        $("#input_time_description").val(data.destime);
+                    }
+                    else if (data.statusproduct == 3){
+                        $("#filtertag1").prop('checked', true);
+                        $("#input_time_description").val(data.destime);
+                    }
+
+                    $("table").removeClass("d-none");
+
+                    //If you wish you can do additional data manipulation here.
+                }
+            });
+        }
+    </script>
+    <script>
+        function save_status() {
+            $.ajaxSetup({
+                    data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+                });
+            var value = 0;
+            var last_record_value = 0;
+            $.ajax({
+                type: 'POST',
+                async: false,
+                url: 'search_status', //The URL you defined in urls.py
+                data: {
+                    pid: $('#pid').val(),
+                    action: 'POST'
+                },
+                cache: false,
+                success: function (data) {
+                    last_record_value = data.statusproduct;
+                }
+            });
+            var flag = true;
+            $.each($("input:checkbox[name='tag']:checked"), function() {
+                value = $(this).val();
+                // or you can do something to the actual checked checkboxes by working directly with  'this'
+                // something like $(this).hide() (only something useful, probably) :P
+                if(value=="1" && last_record_value =="1"){
+                    swal('آخرین وضعیت این کالا ورود بوده و امکان ثبت دو ورود متوالی وجود ندارد!');
+                    flag = false;
+                }
+                else if(last_record_value == "3"){
+                    swal('این کالا از انبار به طور دائم خارج شده و امکان به روزرسانی وضعیت آن وجود ندارد!');
+                    flag = false;
+                }
+            });
+            // here we reject impossible states
+            if(flag == false){
+                return false;
+            }
+            $.ajax({
+                type: 'POST',
+                async: false,
+                url: 'update_status',
+                data:{
+                    pid: $('#pid').val(),
+                    value: value,
+                    desc: $('#input_time_description').val(),
+                    action: 'POST',
+                },
+                success: function (data){
+                    swal('وضعیت جدید با موفقیت ثبت شد.');
+                }
+            });
+        }
+    </script>
+    <script>
+        $(document).on('click', 'input:checkbox', function() {
+            $("input:checkbox[name='tag']:checked").not(this).prop('checked', false);
+        });
+    </script>
+    <script>
+        var input = document.getElementById("pid");
+        input.addEventListener("keypress", function(event) {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                document.getElementById("search").click();
+            }
+        });
+    </script>
+    <script>
+        $('input:checkbox').click(function(){
+            var $inputs = $('input:checkbox');
+            if($(this).is(':checked')){  // <-- check if clicked box is currently checked
+                $inputs.not(this).prop('disabled',true); // <-- disable all but checked checkbox
+            }else{  //<-- if checkbox was unchecked
+                $inputs.prop('disabled',false); // <-- enable all checkboxes
+            }
+        })
+    </script>
+</body>
+</html>

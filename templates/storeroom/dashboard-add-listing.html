@@ -1,0 +1,538 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Qayima is a modern presentation HTML5 Listing & Directory Template.">
+    <meta name="keywords" content="HTML5, Template, Design, Listing, Directory, Listing Template" />
+    <meta name="author" content="creative-wp">
+
+    <!-- Titles
+    ================================================== -->
+    <title> ثبت کالا </title>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/android-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-icon-144x144.png' %}">
+
+    <!-- Custom Font
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,500i,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/simple-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trackpad-scroll-emulator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rangeslider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chartist.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-steps.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/persian-datepicker.css' %}"/>
+    <link rel="stylesheet" href="{% static 'css/jquery.dm-uploader.min.css' %}">
+
+    <style>
+	select {
+		display: block !important;
+		margin: 0;
+		border: 0;
+		padding: 0;
+		height: 1px;
+		opacity: 0;
+		position: relative;
+		/* Top should be the same as the height of your /
+		/ unfocused, nice select replacement element! */
+		top: 30px;
+	}
+</style>
+
+    <select name="my-field" required tabindex="-1">
+</select>
+
+</head>
+
+<body>
+    <!--********************************************************-->
+    <!--********************* SITE CONTENT *********************-->
+    <!--********************************************************-->
+    <div class="site-content">
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Dashboard Site Content
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="dashboard-site-content">
+            <div class="dashboard-menu-area">
+                <div class="btn-close"><span class="icon-cross"></span></div>
+                <div class="site-logo-block">
+                    <a class="navbar-brand site-logo" href="{% url 'storeroom:index' %}">
+                    </a>
+                </div><!--~./ site-logo-block ~-->
+                <div class="dashboard-menu-main tse-scrollable">
+                    <div class="tse-content">
+                        <ul class="dashboard-menu">
+                            <li><a href="{% url 'storeroom:index' %}">
+                                <span class="icon icon-home"></span>
+                                <span>خانه</span>
+                            </a></li>
+                            <li><a class="active" href="{% url 'storeroom:input' %}">
+                                <span class="icon icon-building1"></span>
+                                <span> ثبت کالا </span>
+                            </a></li>
+                            <li><a href="{% url 'storeroom:update' %}">
+                                <span class="icon icon-placeholder1"></span>
+                                <span> تغییر وضعیت کالا </span>
+                            </a></li>
+                            <li><a href="{% url 'storeroom:report' %}">
+                                <span class="icon icon-bookmark1"></span>
+                                <span> گزارش‌گیری </span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div><!--~./ dashboard-menu-main ~-->
+                <div class="dashboard-menu-bottom">
+                    <ul class="dashboard-menu">
+                        <li><a href="{% url 'storeroom:logout' %}">
+                            <span class="icon icon-logout-1"></span>
+                            <span>خروج</span>
+                        </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="dashboard-contant-area">
+                <!--~~~~~ Start dashboard Header ~~~~~--> 
+                <header class="dashboard-header">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="dashboard-header-mian">
+                                    <div class="author-registration-area">
+                                        <div class="dropdown registration">
+                                            <div class="user-thumb">
+                                                <img src="{% static 'images/testimonials/1.png' %}" alt="img">
+                                            </div>
+                                            <button class="dropdown-toggle" type="button" id="authorButton" >  سلام <span> انباردار </span></button>
+                                        </div>
+                                    </div><!-- /.author-registration-area -->
+                                    <div class="add-listing-area">
+                                        <a class="btn btn-default btn-black" href="{% url 'storeroom:input' %}"> ثبت کالا جدید <span class="fas fa-caret-left"></span></a>
+                                    </div><!--~./ add-listing-area ~-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </header><!--~./ end dashboard header ~-->
+                
+                <!--~~~~~ Start dashboard Contant ~~~~~--> 
+                <div class="dashboard-contant dashboard-add-listing-area">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="dashboard-page-title">
+                                    <h3 class="title"> ثبت کالا </h3>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <div id="add-listing-area" class="step-app">
+                                    <ul class="step-steps">
+                                        <li><a href="#tab_step1">
+                                            <span class="number"></span>
+                                            <span class="step-name"> اطلاعات کالا و پروژه </span>
+                                        </a></li>
+                                        <li><a href="#tab_step2">
+                                            <span class="number"></span>
+                                            <span class="step-name"> اطلاعات دستگاه </span>
+                                        </a></li>
+                                        <li><a href="#tab_step3">
+                                            <span class="number"></span>
+                                            <span class="step-name"> توضیحات </span>
+                                        </a></li>
+                                        <li><a href="#tab_step4">
+                                            <span class="number"></span>
+                                            <span class="step-name"> عکس‌ها </span>
+                                        </a></li>
+                                        <li><a href="#tab_step5">
+                                            <span class="number"></span>
+                                            <span class="step-name"> ثبت و چاپ شماره کالا </span>
+                                        </a></li>
+                                    </ul><!--~~./ step-steps ~~-->
+                                    <div class="step-content">
+                                        <div class="step-tab-panel step-tab-location" id="tab_step1">
+                                            <div class="tab-from-content">
+                                                <form class="default-form" id="listlocation" name="listlocation" method="POST">{% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> نام کالا </label>
+                                                                <input type="text" id="input_name" name="input_name" class="form-controllar" placeholder=" مثلا: دریل برقی " />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> نام پروژه </label>
+                                                                <input type="text" id="input_project_name" name="input_project_name" class="form-controllar" placeholder=" مثلا: معدن، تعمیرگاه، آشپزخانه و ... "  />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> شناسه پروژه </label>
+                                                                <input type="text" id="input_project_id" name="input_project_id" class="form-controllar" placeholder=" بدون فاصله " maxlength="10" />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <select id="input_stat" name="input_stat" class="select-custom state" required tabindex="-1" >
+                                                                    <option value=""> وضعیت </option>
+                                                                    <option value="Daghi"> داغی </option>
+                                                                    <option value="Karkarde"> کارکرده </option>
+                                                                    <option value="new"> نو </option>
+                                                                    <option value="etc"> غیره </option>
+
+                                                                </select><!--~./ State ~-->
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <select id="input_category" name="input_category" class="select-custom city" required tabindex="-1">
+                                                                    <option value=""> دسته‌بندی </option>
+                                                                    <option value="manghul" > منقول </option>
+                                                                    <option value="ummanghul"> غیر منقول </option>
+                                                                    <option value="masrafi"> مصرفی </option>
+                                                                    <option value="etc"> غیره </option>
+                                                                </select><!--~./ city ~-->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form><!--~~./ default-form ~~-->
+                                            </div>
+                                        </div><!--~~./ step-tab-info ~~-->
+                                        <div class="step-tab-panel step-tab-location" id="tab_step2">
+                                            <div class="tab-from-content">
+                                                <form class="default-form" id="listmamad" name="listmamad" method="POST">{% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> نوع دستگاه </label>
+                                                                <input type="text" id="input_type" name="input_type" class="form-controllar" placeholder=" مثلا: ماشین آلات، تجهیزات جانبی، خوراکی و ... " />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> برند دستگاه </label>
+                                                                <input type="text" id="input_brand" name="input_brand" class="form-controllar" placeholder=" مثلا: رونیکس " />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> کارکرد </label>
+                                                                <input type="text" id="input_mileage" name="input_mileage" class="form-controllar" placeholder=" مثلا: 18,000 کیلومتر " />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> زمان ورود </label>
+                                                                <input type="text" id="input_time_device" name="input_time_device" class="form-controllar" placeholder=" زمان ورود " />
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-lg-4 col-md-6">
+                                                            <div class="form-group">
+                                                                <label> توضیحات </label>
+                                                                <input type="text" id="input_time_description" name="input_time_description" class="form-controllar" placeholder=" توضیحات " required/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form><!--~~./ default-form ~~-->
+                                            </div>
+                                        </div><!--~~./ step-tab-info ~~-->
+
+                                        <div class="step-tab-panel step-tab-info" id="tab_step3">
+                                            <div class="tab-from-content">
+                                                <form class="default-form" id="listinfo" name="listinfo" method="POST">{% csrf_token %}
+                                                    <div class="row">
+                                                        <div class="col-md-6 col-lg-8 col-xl-12">
+                                                            <div class="form-group">
+                                                                <label> توضیحات </label>
+                                                                <input id="description" name="description" type="text" class="form-controllar" placeholder=" مثلا: این دستگاه شکسته وارد انبار شده. " required>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form><!--~~./ default-form ~~-->
+                                            </div>
+                                        </div><!--~~./ step-tab-panel ~~-->
+
+                                        <div class="step-tab-panel step-tab-gallery" id="tab_step4">
+                                            <div class="tab-from-content">
+                                                <form class="default-form" id="listcat" name="listcat" method="POST" onchange="return fileValidation()">{% csrf_token %}
+                                                    <div class="row half_percent_margin_bottom">
+                                                        <div class="col-4">
+                                                            <div class="custom-file" id="custom-file-1">
+                                                                <div class="add-gallery-text">
+                                                                    <i class="icon-file-picture"></i>
+                                                                    <span id="span1"> برای بارگذاری عکس ۱ کلیک کنید. </span>
+                                                                </div>
+                                                                <input id ="file1" name="photo" type="file">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="custom-file" id="custom-file-2">
+                                                                <div class="add-gallery-text">
+                                                                    <i class="icon-file-picture"></i>
+                                                                    <span id="span2"> برای بارگذاری عکس ۲ کلیک کنید. </span>
+                                                                </div>
+                                                                <input id ="file2" name="photo" type="file">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="custom-file" id="custom-file-3">
+                                                                <div class="add-gallery-text">
+                                                                    <i class="icon-file-picture"></i>
+                                                                    <span id="span3"> برای بارگذاری عکس ۳ کلیک کنید. </span>
+                                                                </div>
+                                                                <input id ="file3" name="photo" type="file">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row half_percent_margin_bottom">
+                                                        <div class="col-4">
+                                                            <div class="custom-file" id="custom-file-4">
+                                                                <div class="add-gallery-text">
+                                                                    <i class="icon-file-picture"></i>
+                                                                    <span id="span4"> برای بارگذاری عکس ۴ کلیک کنید. </span>
+                                                                </div>
+                                                                <input id ="file4" name="photo" type="file">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="custom-file" id="custom-file-5">
+                                                                <div class="add-gallery-text">
+                                                                    <i class="icon-file-picture"></i>
+                                                                    <span id="span5"> برای بارگذاری عکس ۵ کلیک کنید. </span>
+                                                                </div>
+                                                                <input id ="file5" name="photo" type="file">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="custom-file" id="custom-file-6">
+                                                                <div class="add-gallery-text">
+                                                                    <i class="icon-file-picture"></i>
+                                                                    <span id="span6"> برای بارگذاری عکس ۶ کلیک کنید. </span>
+                                                                </div>
+                                                                <input id ="file6" name="photo" type="file">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </form><!--~~./ default-form ~~-->
+                                            </div>
+                                        </div><!--~~./ step-tab-panel ~~-->
+
+                                        <div class="step-tab-panel" id="tab_step5">{% csrf_token %}
+                                            <div class="tab-from-content">
+                                                <form class="default-form" action="#" id="confirmationlist" name="confirmationlist">
+                                                </form><!--~~./ default-form ~~-->
+                                            </div>
+                                        </div><!--~~./ step-tab-panel ~~-->
+                                    </div><!--~~./ step-content ~~-->
+                                    <div class="step-footer step-tab-pager">
+                                        <button data-direction="prev" class="btn btn-default btn-back">قبلی</button>
+                                        <button id="next" data-direction="next" class="btn btn-default">بعدی</button>
+                                        <button data-direction="finish" class="btn btn-default" onclick="runScript()"> تولید، ثبت و چاپ شماره کالا </button>
+                                    </div><!--~~./ step-footer ~~-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!--~./ end dashboard contant ~-->
+            </div>
+        </div><!--~./ end dashboard site content ~-->
+    </div>
+    <!--~./ end site content ~-->
+
+
+    <!-- All The JS Files
+    ================================================== -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/jquery-validate.bootstrap-tooltip.min.js' %}"></script>
+    <script src="{% static 'js/SyoTimer.js' %}"></script>
+    <script src="{% static 'js/theia-sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'js/ResizeSensor.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/packery-mode.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/simple-scrollbar.min.js' %}"></script>
+    <script src="{% static 'js/scrolla.jquery.min.js' %}"></script>
+    <script src="{% static 'js/odometer.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.nav.js' %}"></script>
+    <script src="{% static 'js/rangeslider.min.js' %}"></script>
+    <script src="{% static 'js/jquery.trackpad-scroll-emulator.min.js' %}"></script>
+    <script src="{% static 'js/rater.min.js' %}"></script>
+    <script src="{% static 'js/jquery-steps.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/persian-date.js' %}"></script>
+    <script src="{% static 'js/persian-datepicker.js' %}"></script>
+    <script src="{% static 'js/jquery.dm-uploader.min.js' %}"></script>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+
+    <script>type = "text/javascript"
+        function validateform(){
+            var a = document.forms["listlocation"]["name"].value;
+            if (a == null || a == "") {
+                swal("Please Fill In All Required Fields");
+                return false;
+            }
+        }
+    </script><!-- main-js -->
+    <script>
+        function runScript() {
+    $.ajaxSetup({
+            data: {csrfmiddlewaretoken: '{{ csrf_token }}' },
+        });
+    $.ajax({
+        type:'POST',
+        url: 'register', //The URL you defined in urls.py
+        data:{
+            proj_name:$('#input_project_name').val(),
+            category:$('#input_category').val(),
+            device_type:$('#input_type').val(),
+            device_stat:$('#input_stat').val(),
+            device_brand:$('#input_brand').val(),
+            device_mil:$('#input_mileage').val(),
+            description:$('#description').val(),
+            file1:$('#file1').val(),
+            file2:$('#file2').val(),
+            file3:$('#file3').val(),
+            file4:$('#file4').val(),
+            file5:$('#file5').val(),
+            file6:$('#file6').val(),
+            name:$('#input_name').val(),
+            proj_id:$('#input_project_id').val(),
+            time:$('#input_time_device').val(),
+            timedesc:$('#input_time_description').val(),
+            action : 'post'
+        },
+        cache:false,
+        success: function (data) {
+            swal("شماره کالا: " + data.id);
+            //If you wish you can do additional data manipulation here.
+        }
+    });
+}
+
+    </script>
+    <script>
+        function fileValidation() {
+            const files = ["file1", "file2", "file3", "file4", "file5", "file6"];
+            const spans = ["span1", "span2", "span3", "span4", "span5", "span6"];
+            const farsiDigits = ['۰', '۱', '۲', '۳', '۴', '۵', '۶', '۷', '۸', '۹'];
+            const customfiles = ["custom-file-1", "custom-file-2", "custom-file-3", "custom-file-4", "custom-file-5", "custom-file-6"]
+            for (let i = 0; i < 6; i++) {
+                var fileInput = document.getElementById(files[i]);
+                var filePath = fileInput.value;
+
+                // Allowing file type
+                var allowedExtensions = /(\.jpeg|\.pdf|\.jpg|\.png)$/i;
+
+                $('#next').attr("disabled", false);
+                if (filePath.length > 0){
+                    var filename = filePath.split('\\').pop();
+                    var span = document.getElementById(spans[i]);
+                    var area = document.getElementById(customfiles[i]);
+                    $(span).html(filename);
+                    $(area).css("background-color", "green");
+                    if (!allowedExtensions.exec(filePath)) {
+                        $(span).html('برای بارگذاری عکس ' + farsiDigits[i+1] + ' کلیک کنید.');
+                        $(area).css("background-color", "initial");
+                        fileInput.value = '';
+                        swal('فرمت فایل اشتباه می‌باشد!! لطفا فایل انتخابی دیگری انتخاب کنید.');
+                        swal('فرمت فایل شماره' + farsiDigits[i+1] + 'مجاز نمی باشد.');
+                        return false;
+                    }
+                }else {
+                    var span = document.getElementById(spans[i]);
+                    $(span).html('برای بارگذاری عکس ' + farsiDigits[i+1] + ' کلیک کنید.');
+                    var area = document.getElementById(customfiles[i]);
+                    $(area).css("background-color", "initial");
+                }
+            }
+
+            swal('عکس مورد نظر با موفقیت ثبت شد.')
+        }
+
+    </script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $("#input_time_device").pDatepicker(
+                {
+                    "format": "YYYY-MM-DD HH:mm:ss",
+                    "minDate": 1697285887330,
+                    "maxDate": 1698236287337,
+                    "calendar": {
+                        "persian": {
+                            "locale": "en",
+                            "showHint": true,
+                            "leapYearMode": "algorithmic"
+                        },
+                    },
+                    "toolbox": {
+                        "enabled": true,
+                        "calendarSwitch": {
+                            "enabled": false,
+                            "format": "MMMM"
+                        },
+                        "todayButton": {
+                            "enabled": true,
+                            "text": {
+                                "fa": "امروز",
+                                "en": "Today"
+                            }
+                        },
+                        "text": {
+                            "btnToday": "امروز"
+                        }
+                    },
+                    "timePicker": {
+                        "enabled": true,
+                        "step": 1,
+                        "hour": {
+                            "enabled": true,
+                            "step": null
+                        },
+                        "minute": {
+                            "enabled": true,
+                            "step": null
+                        },
+                        "second": {
+                            "enabled": true,
+                            "step": null
+                        },
+                        "meridian": {
+                            "enabled": true
+                        }
+                    }
+                });
+        });
+    </script>
+</body>
+</html>

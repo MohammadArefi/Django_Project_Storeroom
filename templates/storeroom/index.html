@@ -1,0 +1,219 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Basic Page Needs
+    ================================================== -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <!-- Specific Meta
+    ================================================== -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="description" content="Qayima is a modern presentation HTML5 Listing & Directory Template.">
+    <meta name="keywords" content="HTML5, Template, Design, Listing, Directory, Listing Template" />
+    <meta name="author" content="creative-wp">
+
+    <!-- Titles
+    ================================================== -->
+    <title> صفحه اصلی </title>
+
+    <!-- Favicons
+    ================================================== -->
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+    <link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/android-icon-72x72.png' %}">
+    <link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-icon-144x144.png' %}">
+
+    <!-- Custom Font
+    ================================================== -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,500i,600,700,800,900&display=swap" rel="stylesheet">
+
+    <!-- CSS
+    ================================================== -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+    <link rel="stylesheet" href="{% static 'css/owl.carousel.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/simple-scrollbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/trackpad-scroll-emulator.css' %}">
+    <link rel="stylesheet" href="{% static 'css/rangeslider.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/chartist.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/jquery-steps.css' %}">
+    <link rel="stylesheet" href="{% static 'css/fontawesome.all.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/icomoon.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    <script src="{% static 'js/modernizr.min.js' %}"></script>
+</head>
+
+<body>
+    <script src="{% static 'js/sweetalert.min.js' %}"></script>
+    {% for message in messages %}
+        {% if message.tags == 'info' %}
+            <script>
+                var m = "{{ message }}";
+                swal("Blocked !", m, "info");
+            </script>
+        {% elif message.tags == 'error' %}
+            <script>
+                var m = "{{ message }}";
+                swal("Denied !", m, "error");
+            </script>
+        {% endif %}
+    {% endfor %}
+    <!--********************************************************-->
+    <!--********************* SITE CONTENT *********************-->
+    <!--********************************************************-->
+    <div class="site-content">
+
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Site Header
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <header class="site-header header-style-one">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-12">
+                        <div class="navigation-area">
+                            <div class="header-navigation-left">
+                                <!-- Site Branding -->
+                                <div class="site-branding">
+                                    <a href="{% url 'storeroom:index' %}">
+                                    </a>
+                                </div><!--  /.site-branding -->
+                                <div class="mobile-element-meta">
+                                    <div class="search-wrap">
+                                        <div class="search-btn">
+                                            <span class="icon-search32"></span>
+                                        </div>
+                                        <div class="search-form">
+                                            <form action="#">
+                                                <input type="search" placeholder="جستجو">
+                                                <button type="submit"><span class="icon-search32"></span></button>
+                                            </form>
+                                        </div>
+                                    </div><!--~./ search-wrap ~-->
+                                    <div class="mobile-user-registration"></div>
+                                </div>
+                            </div><!-- /.header-navigation-left -->
+
+                            <!-- Site Navigation -->
+                            <div class="site-navigation">
+                                <div class="hamburger-menus">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                                <nav class="navigation">
+                                        <div class="overlaybg"></div><!-- /.overlaybg -->
+                                        <!-- Main Menu -->
+                                        <div class="menu-wrapper">
+                                            <div class="menu-content">
+                                                <ul class="mainmenu">
+                                                </ul> <!-- /.menu-list -->
+                                            </div> <!-- /.hours-content-->
+                                        </div><!-- /.menu-wrapper -->
+                                    </nav>
+                            </div><!--  /.site-navigation -->
+
+                            <div class="header-navigation-right">
+                                    <div class="user-registration-area">
+                                        {% if user.is_authenticated %}
+                                            <a class="user-reg-btn" href={% url 'storeroom:input'%}>
+                                                <span class="icon icon-user-silhouette2" style="color: purple"></span>
+                                                <span class="text" style="color: purple">ورود</span>
+                                            </a>
+                                        {% else %}
+                                            <a class="user-reg-btn" href="#">
+                                            <span class="icon icon-user-silhouette2" style="color: purple"></span>
+                                            <span class="text" style="color: purple">ورود</span>
+                                        </a>
+                                        {% endif %}
+                                        <div class="user-register-area">
+                                            <!--~~~ Start User Signin Area ~~~-->
+                                            <div class="user-signin-area">
+                                                <div class="form-content">
+                                                    <div class="form-content-signin">
+                                                        <form class="default-form signin-form" action="login_user/" method="POST" autocomplete="off">
+                                                            {% csrf_token %}
+                                                            <div class="form-group">
+                                                                <input id="email" name="email" class="form-controllar" type="text" placeholder=" نام کاربری ">
+                                                                <span class="icon-user-1"></span>
+                                                            </div><!--/.form-group-->
+
+                                                            <div class="form-group">
+                                                                <input id="pass" name="password" class="form-controllar" type="password" placeholder="کلمه عبور">
+                                                                <span class="icon-key3"></span>
+                                                            </div><!--/.form-group-->
+
+                                                            <div class="form-btn-group">
+                                                                <button type="submit" class="btn btn-default btn-black">
+                                                                    ورود
+                                                                    <span class="fas fa-caret-left"></span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div><!--~./ end user signin area ~-->
+                                        </div>
+                                    </div><!--~./ user-registration-area ~-->
+                                </div><!--~./ header-navigation-right ~-->
+                        </div><!--  /.navigation-area -->
+                    </div><!--  /.col-12 -->
+                </div><!--  /.row -->
+            </div><!--  /.container-fluid -->
+        </header><!--~~./ end site header ~~-->
+        <!--~~~ Sticky Header ~~~-->
+        <div id="sticky-header" class="sticky-header-one"></div><!--~./ end sticky header ~-->
+
+        <!--~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+            Start Frontpage Banner Section
+        ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
+        <div class="frontpage-banner-section frontpage-banner-style-one bg-overlay-violet bg-image ptb-100" style="background-image:url('{% static 'images/bg/123456.jpg' %}')">
+            <div class="waves-effect bottom" style="background: url('{% static 'images/shape/waves-bottom.png' %}');"></div>
+            <div class="container">
+                <div class="row align-items-center justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="frontpage-banner-content text-center text-white">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div><!--~./ end frontpage banner Section ~-->
+
+
+    <!-- All The JS Files
+    ================================================== -->
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.validate.min.js' %}"></script>
+    <script src="{% static 'js/jquery-validate.bootstrap-tooltip.min.js' %}"></script>
+    <script src="{% static 'js/SyoTimer.js' %}"></script>
+    <script src="{% static 'js/theia-sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'js/ResizeSensor.min.js' %}"></script>
+    <script src="{% static 'js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/isotope.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/packery-mode.pkgd.min.js' %}"></script>
+    <script src="{% static 'js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'js/simple-scrollbar.min.js' %}"></script>
+    <script src="{% static 'js/scrolla.jquery.min.js' %}"></script>
+    <script src="{% static 'js/odometer.min.js' %}"></script>
+    <script src="{% static 'js/jquery.sticky.js' %}"></script>
+    <script src="{% static 'js/jquery.nav.js' %}"></script>
+    <script src="{% static 'js/rangeslider.min.js' %}"></script>
+    <script src="{% static 'js/jquery.trackpad-scroll-emulator.min.js' %}"></script>
+    <script src="{% static 'js/rater.min.js' %}"></script>
+    <script src="{% static 'js/jquery-steps.min.js' %}"></script>
+    <script src="{% static 'js/plugins.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script><!-- main-js -->
+</body>
+</html>
